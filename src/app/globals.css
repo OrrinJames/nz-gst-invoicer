@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+/* Print view: hide app chrome and print the invoice edge to edge on A4. */
+@page {
+  size: A4;
+  margin: 16mm;
+}
+
+@media print {
+  body {
+    @apply bg-white;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}
